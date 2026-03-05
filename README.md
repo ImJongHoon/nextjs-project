@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next JS Boilerplate 저장용
 
-## Getting Started
+## git commit version 마다 특정 기능의 boilerplate 전략
+### 1. main에는 boilerplate 관련 코드만 업로드
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+1) 설정 branch 생성
+```
+git checkout -b config/tailwind
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2) Tailwind CSS 설정 완료 후 커밋.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3) main branch에 Tailwind CSS 설정 반영
+```
+git checkout main
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+git merge config/tailwind
+```
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+### 2. boilerplate 기반 사용 실습은 branch를 파서 작성하기.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1) main에서 분기
+```
+git checkout -b practice/data-fetching
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2) 실습 진행
 
-## Deploy on Vercel
+3) 설정할 게 있다면 commit 후 main으로 이동
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4) main boilerplate 업데이트 후 다시 복귀
+```
+git checkout -b practice/data-fetching
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5) 이후 main의 설정을 합쳐서 실습 test 진행.
+```
+git merge main
+```
