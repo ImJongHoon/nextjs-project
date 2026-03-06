@@ -49,3 +49,7 @@ git merge master
 ```
 config: tailwind css 설정
 ```
+
+
+# Project todo
+## cookie 언어 선택하는 UI (LocaleSelector.tsx) 개선 (rootlayout async 추가된 것도 확인)
